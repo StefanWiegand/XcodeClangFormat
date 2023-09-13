@@ -1,3 +1,10 @@
+## 1.2
+Released on May Sep 13, 2023.
+
+- Upgraded Clang to 16.0.5
+- Changed architecture to arm64
+- Fixed warnings and deprecated APIs
+
 ## 1.1
 
 Released on May 19, 2020.
