@@ -1,6 +1,8 @@
 #import "ClangFormatCommand.h"
 
 #import <AppKit/AppKit.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
+
 
 #include "ClangFormat.h"
 
@@ -18,7 +20,10 @@ void updateOffsets(std::vector<size_t>& offsets, NSMutableArray<NSString*>* line
 
 clang::format::FormatStyle::LanguageKind getLanguageKind(XCSourceTextBuffer* buffer) {
     CFStringRef uti = (__bridge CFStringRef)buffer.contentUTI;
-    if (UTTypeEqual(uti, kUTTypeCHeader)) {
+	NSString* utiString = (__bridge NSString *)uti;
+    UTType* type = [UTType typeWithIdentifier:(NSString*)utiString];
+
+    if ([type isEqual: UTTypeCHeader]) {
         // C header files could also be Objective-C. We attempt to detect typical Objective-C keywords.
         for (NSString* line in buffer.lines) {
             if ([line hasPrefix:@"#import"] || [line hasPrefix:@"@interface"] || [line hasPrefix:@"@protocol"] ||
@@ -27,15 +32,13 @@ clang::format::FormatStyle::LanguageKind getLanguageKind(XCSourceTextBuffer* buf
             }
         }
     }
-    if (UTTypeEqual(uti, kUTTypeCPlusPlusHeader) || UTTypeEqual(uti, kUTTypeCPlusPlusSource) ||
-               UTTypeEqual(uti, kUTTypeCHeader) || UTTypeEqual(uti, kUTTypeCSource)) {
+    if ([type isEqual: UTTypeCPlusPlusHeader] || [type isEqual: UTTypeCPlusPlusSource] ||
+               [type isEqual: UTTypeCHeader] || [type isEqual: UTTypeCSource]) {
         return clang::format::FormatStyle::LK_Cpp;
-    } else if (UTTypeEqual(uti, kUTTypeObjectiveCSource) ||
-               UTTypeEqual(uti, kUTTypeObjectiveCPlusPlusSource)) {
+    } else if ([type isEqual: UTTypeObjectiveCSource] ||
+               [type isEqual: UTTypeObjectiveCPlusPlusSource]) {
         return clang::format::FormatStyle::LK_ObjC;
-    } else if (UTTypeEqual(uti, kUTTypeJavaSource)) {
-        return clang::format::FormatStyle::LK_Java;
-    } else if (UTTypeEqual(uti, kUTTypeJavaScript)) {
+    } else if ([type isEqual: UTTypeJavaScript]) {
         return clang::format::FormatStyle::LK_JavaScript;
     }
 
