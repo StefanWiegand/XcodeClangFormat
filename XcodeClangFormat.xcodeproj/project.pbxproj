@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,10 +14,11 @@
 		559B24101D7EBDC400937AB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B23F81D7EBDB700937AB3 /* Cocoa.framework */; };
 		559B24161D7EBDC400937AB3 /* ClangFormatExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B24151D7EBDC400937AB3 /* ClangFormatExtension.m */; };
 		559B24191D7EBDC400937AB3 /* ClangFormatCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */; };
-		559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 559B240F1D7EBDC400937AB3 /* clang-format.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 559B240F1D7EBDC400937AB3 /* clang-format.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55BCFFFA1D80170F000EDB05 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 557D38B71D7F270E00708269 /* libcurses.tbd */; };
 		C98E4F652AB068DB0028E37D /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E4F5E2AB0643D0028E37D /* XcodeKit.framework */; };
-		C98E4F662AB068DB0028E37D /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98E4F5E2AB0643D0028E37D /* XcodeKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C98E4F662AB068DB0028E37D /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98E4F5E2AB0643D0028E37D /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F875DDED2AB20E3B007CC9B0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F875DDEC2AB20E3B007CC9B0 /* UniformTypeIdentifiers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +32,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		559B240A1D7EBDB700937AB3 /* Embed App Extensions */ = {
+		559B240A1D7EBDB700937AB3 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed App Extensions */,
+				559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C98E4F672AB068DB0028E37D /* Embed Frameworks */ = {
@@ -77,6 +78,7 @@
 		55BCFFF71D801362000EDB05 /* config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
 		55C8203F1D87F81300006D07 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		C98E4F5E2AB0643D0028E37D /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		F875DDEC2AB20E3B007CC9B0 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F875DDED2AB20E3B007CC9B0 /* UniformTypeIdentifiers.framework in Frameworks */,
 				C98E4F652AB068DB0028E37D /* XcodeKit.framework in Frameworks */,
 				55BCFFFA1D80170F000EDB05 /* libcurses.tbd in Frameworks */,
 				559B24101D7EBDC400937AB3 /* Cocoa.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		559B23F71D7EBDB700937AB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F875DDEC2AB20E3B007CC9B0 /* UniformTypeIdentifiers.framework */,
 				C98E4F5E2AB0643D0028E37D /* XcodeKit.framework */,
 				557D38B71D7F270E00708269 /* libcurses.tbd */,
 				559B23F81D7EBDB700937AB3 /* Cocoa.framework */,
@@ -185,7 +189,7 @@
 				559B23DA1D7EBDA300937AB3 /* Sources */,
 				559B23DB1D7EBDA300937AB3 /* Frameworks */,
 				559B23DC1D7EBDA300937AB3 /* Resources */,
-				559B240A1D7EBDB700937AB3 /* Embed App Extensions */,
+				559B240A1D7EBDB700937AB3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -221,7 +225,8 @@
 		559B23D61D7EBDA300937AB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = Mapbox;
 				TargetAttributes = {
 					559B23DD1D7EBDA300937AB3 = {
@@ -351,6 +356,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -359,9 +365,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -408,6 +416,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -416,9 +425,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -443,11 +454,15 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = XcodeClangFormat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.XcodeClangFormat;
@@ -466,10 +481,14 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XcodeClangFormat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.XcodeClangFormat;
@@ -496,7 +515,11 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "clang-format/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.2.1;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -523,7 +546,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_STYLE = all;
 			};
 			name = Debug;
 		};
@@ -545,7 +567,11 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "clang-format/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.2.1;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -572,7 +598,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_STYLE = all;
 			};
 			name = Release;
 		};
