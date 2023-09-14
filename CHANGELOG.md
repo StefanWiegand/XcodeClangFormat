@@ -1,8 +1,8 @@
 ## 1.2
-Released on May Sep 13, 2023.
+Released on May Sep 15, 2023.
 
-- Upgraded Clang to 16.0.5
-- Changed architecture to arm64
+- Upgraded Clang to 16.0.6
+- Added script to configure using homebrew
 - Fixed warnings and deprecated APIs
 
 ## 1.1
