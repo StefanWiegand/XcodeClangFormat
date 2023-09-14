@@ -39,8 +39,8 @@ To define a keyboard shortcut, open Xcode's preferences, and switch to the *Key 
 
 ## Building
 
-To build XcodeClangFormat, run `./configure` on the command line, then build the XcodeClangFormat scheme in the included Xcode project.
-
+To build XcodeClangFormat on ARM, run `./configure` on the command line, then build the XcodeClangFormat scheme in the included Xcode project.
+Alternatively - to build XcodeClangFormat on any architecture - install Homebrew and run './configure_brew', which will install LLVM view Homebrew for the current architecture 
 
 ## FAQ
 
