@@ -8,8 +8,8 @@ set -u
 pushd "$(dirname $0)" >/dev/null
 
 HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@16
-
-LLVM_CONFIG=/opt/homebrew/cellar/llvm/16.0.6/bin/llvm-config
+BREW_CELLAR=$(brew --prefix)/Cellar
+LLVM_CONFIG=${BREW_CELLAR}/llvm/16.0.6/bin/llvm-config
 
 echo "// Do not modify this file. Instead, rerun ./configure_brew" > config.xcconfig
 echo "LLVM_LIBDIR=$(${LLVM_CONFIG} --libdir)" >> config.xcconfig
